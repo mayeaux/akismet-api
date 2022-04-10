@@ -40,11 +40,11 @@ get started! For a full list of available client parameters and alternative
 constructors, check out the [client documentation][client].
 
 ```javascript
-import { AkismetClient } from 'akismet-api'
+import { AkismetClient } from 'akismet-api';
 
-const key = 'myKey'
-const blog = 'https://myblog.com'
-const client = new AkismetClient({ key, blog })
+const key = 'myKey';
+const blog = 'https://myblog.com';
+const client = new AkismetClient({ key, blog });
 ```
 
 Verifying your Key
@@ -54,12 +54,12 @@ It's a good idea to verify your key before use.
 
 ```javascript
 try {
-  const isValid = await client.verifyKey()
+  const isValid = await client.verifyKey();
 
-  if (isValid) console.log('Valid key!')
-  else console.log('Invalid key!')
+  if (isValid) console.log('Valid key!');
+  else console.log('Invalid key!');
 } catch (err) {
-  console.error('Could not reach Akismet:', err.message)
+  console.error('Could not reach Akismet:', err.message);
 }
 ```
 
@@ -91,12 +91,12 @@ exception.
 
 ```javascript
 try {
-  const isSpam = await client.checkSpam(comment)
+  const isSpam = await client.checkSpam(comment);
 
-  if (isSpam) console.log('OMG Spam!')
-  else console.log('Totally not spam')
+  if (isSpam) console.log('OMG Spam!');
+  else console.log('Totally not spam');
 } catch (err) {
-  console.error('Something went wrong:', err.message)
+  console.error('Something went wrong:', err.message);
 }
 ```
 
@@ -108,10 +108,10 @@ we can report this to Akismet to help improve their accuracy in the future.
 
 ```javascript
 try {
-  await client.submitSpam(comment)
-  console.log('Spam reported!')
+  await client.submitSpam(comment);
+  console.log('Spam reported!');
 } catch (err) {
-  console.error('Something went wrong:', err.message)
+  console.error('Something went wrong:', err.message);
 }
 ```
 
@@ -123,10 +123,10 @@ report this to Akismet too.
 
 ```javascript
 try {
-  await client.submitHam(comment)
-  console.log('Non-spam reported!')
+  await client.submitHam(comment);
+  console.log('Non-spam reported!');
 } catch (err) {
-  console.error('Something went wrong:', err.message)
+  console.error('Something went wrong:', err.message);
 }
 ```
 
